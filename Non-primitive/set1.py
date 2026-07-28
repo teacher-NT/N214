@@ -47,8 +47,10 @@ lst = ['Arab', 'Koreys', 'Nemis', 'Ingliz', 'Rus']
 set1 = {1,2,3,4,5,6}
 set2 = {4,5,6,7,8,9}
 
-# set3 = set1.intersection(set2)
-# print(set3)
+set3 = set1.intersection(set2)
+print(set3)
+set4 = set1 & set2
+print(set4)
 # print(set1)
 
 # set1.intersection_update(set2)
