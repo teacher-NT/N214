@@ -72,3 +72,4 @@ set1 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14}
 set2 = {3,4,5,6}
 print(set2.issubset(set1))
 print(set1.issuperset(set2))
+
