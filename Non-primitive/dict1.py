@@ -19,5 +19,8 @@ mahsulot = {
 # else:
 #     print("no")
 
-for i in mahsulot:
-    print(i, mahsulot[i])
+# for i in mahsulot:
+#     print(i, mahsulot[i])
+
+print(mahsulot.get("narx",  "Bunday kalit yo'q"))
+# print(mahsulot['narx'])
