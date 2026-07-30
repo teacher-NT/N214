@@ -32,6 +32,12 @@ mahsulot = {
 # else:
 #     print("No")
 
-a = mahsulot.pop("nomi")
-print(a)
-print(mahsulot)
+# a = mahsulot.pop("nomi")
+# print(a)
+# print(mahsulot)
+
+lst = mahsulot.items()
+print(lst)
+print(list(mahsulot))
+for k, v in mahsulot.items():
+    print(k, v)
