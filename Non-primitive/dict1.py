@@ -36,8 +36,12 @@ mahsulot = {
 # print(a)
 # print(mahsulot)
 
-lst = mahsulot.items()
-print(lst)
-print(list(mahsulot))
-for k, v in mahsulot.items():
-    print(k, v)
+# lst = mahsulot.items()
+# print(lst)
+# print(list(mahsulot))
+# for k, v in mahsulot.items():
+#     print(k, v)
+
+a = mahsulot.popitem()
+print(a)
+print(mahsulot)
