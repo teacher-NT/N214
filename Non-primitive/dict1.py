@@ -25,9 +25,13 @@ mahsulot = {
 # print(mahsulot.get("narx",  "Bunday kalit yo'q"))
 # print(mahsulot['narx'])
 
-print(mahsulot.keys())
-print(mahsulot.values())
-if "Muzqaymoq" in mahsulot.values():
-    print("Yes")
-else:
-    print("No")
+# print(mahsulot.keys())
+# print(mahsulot.values())
+# if "Muzqaymoq" in mahsulot.values():
+#     print("Yes")
+# else:
+#     print("No")
+
+a = mahsulot.pop("nomi")
+print(a)
+print(mahsulot)
