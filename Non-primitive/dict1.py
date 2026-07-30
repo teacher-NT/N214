@@ -42,6 +42,12 @@ mahsulot = {
 # for k, v in mahsulot.items():
 #     print(k, v)
 
-a = mahsulot.popitem()
-print(a)
+# a = mahsulot.popitem()
+# print(a)
+# print(mahsulot)
+
+mahsulot.update({"nomi": "Plombir", "narxi":9000, "sifat": "Alo"})
+# mahsulot['sifat'] = 'Alo'
+# mahsulot['narxi'] = 9000
+# mahsulot['nomi'] = 'Plombir'
 print(mahsulot)
