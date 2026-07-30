@@ -22,5 +22,12 @@ mahsulot = {
 # for i in mahsulot:
 #     print(i, mahsulot[i])
 
-print(mahsulot.get("narx",  "Bunday kalit yo'q"))
+# print(mahsulot.get("narx",  "Bunday kalit yo'q"))
 # print(mahsulot['narx'])
+
+print(mahsulot.keys())
+print(mahsulot.values())
+if "Muzqaymoq" in mahsulot.values():
+    print("Yes")
+else:
+    print("No")
