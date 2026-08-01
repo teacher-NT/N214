@@ -19,7 +19,7 @@ def square(a:int) -> int:
     return a**2
 
 # print(square(4))
-
+# =============================================
 def func(a):
     return a**2, a**3, a**0.5
 
@@ -42,6 +42,7 @@ def func4(**n):
     print(n)
 
 # func4(ism='Ali', yosh=14, manzil='Toshkent')
+# =============================================
 
 def add1(a, b):
     return a + b
@@ -54,6 +55,7 @@ add2 = lambda a,b: a+b
 # func5 = lambda n: list(print(i, end=" ") for i in range(1,n) if i%2==0)
 # func5(10)
 
+# =============================================# =============================================
 
 names = ['Abdulla', 'Samandar', 'Mahliyo', 'Sardor', 'Dilshod', 'Avazbek', 'Sanjar']
 
@@ -67,7 +69,18 @@ names = ['Abdulla', 'Samandar', 'Mahliyo', 'Sardor', 'Dilshod', 'Avazbek', 'Sanj
 def check_name(n):
     return n[0]=='S'
 new = list(filter(check_name, names))
-print(new)
+# print(new)
 
-new2 = list(filter(lambda n: n[0]=='S', names))
+new2 = list(filter(lambda n: n[0].lower()=='s', names))
+# print(new2)
+
+# =============================================# =============================================
+
+names2 = ['abdulla', 'bEgzod', 'SherZOD', 'alI', 'DilsHOd']
+
+# for i in range(len(names2)):
+#     names2[i] = names2[i].title()
+# print(names2)
+
+new2 = list(map(lambda n: n.title(), names2))
 print(new2)
