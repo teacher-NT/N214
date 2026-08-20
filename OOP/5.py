@@ -11,7 +11,13 @@ class Animal:
         print(f"{self.nom} nomli hayvon ovqatlanmoqda...")
 
 class Dog(Animal):
-    pass
+    def run(self):
+        print(f"{self.nom} yugurmoqda...")
+
+    def eat(self):
+        print(f"{self.nom} sasiska yemoqda...")
+
 
 dog1 = Dog("Bobik", "It", 4)
 dog1.eat()
+dog1.run()
