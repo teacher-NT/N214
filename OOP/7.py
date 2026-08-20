@@ -1,19 +1,26 @@
 import os
 os.system("cls")
 
-class Boat:
-    def swim(self):
-        print("Boat is swimming...")
+class Animal:
+    def eat(self):
+        print("Animal is eating...")
 
-class Plane(Boat):
-    def fly(self):
-        print("Plane is flying...")
+    def sleep(self):
+        print("Animal is sleepping...")
 
-class Damas(Plane):
-    def run(self):
-        print("Damas is running...")
+class Dog(Animal):
+    pass
 
-d1 = Damas()
-d1.run()
-d1.fly()
-d1.swim()
+class Cat(Animal):
+    pass
+
+class Duck(Animal):
+    pass
+
+dog1 = Dog()
+cat1 = Cat()
+duck1 = Duck()
+
+dog1.eat()
+cat1.eat()
+duck1.eat()
