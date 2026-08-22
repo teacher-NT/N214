@@ -6,6 +6,7 @@ class Car:
         self.brand =  b
         self.model = m
         self.price = p
+        self.colors = ['red','green','blue','black','white']
 
     def __str__(self):
         return f"{self.brand} {self.model} {self.price}$"
@@ -25,6 +26,15 @@ class Car:
 
     def __truediv__(self, n):
         self.price /= n
+
+    def __contains__(self, item):
+        for i in self.colors:
+           if item.lower() == i.lower():
+               return True
+        return False 
+
+    def __len__(self):
+        return len(self.colors)
     
     
 c1 = Car("GM", "Cobalt", 13000)
@@ -37,9 +47,15 @@ c1 = Car("GM", "Cobalt", 13000)
 # print(c1 < 1000)
 # print(c1 == 13000)
 
-c1 * 4
-c1 / 10
-print(c1)
+# c1 * 4
+# c1 / 10
+# print(c1)
 
 
-# print(5 > 3)
+# if "Qora" in c1:
+#     print("Yes")
+# else:
+#     print("No")
+
+print(len(c1))
+
