@@ -21,14 +21,31 @@ matn1.setStyleSheet("font-size: 28px; color:blue; font-weight:bold;")
 matn1.setFont(QFont("Ink Free", 18))
 matn1.move(30, 20)
 
+matn2 = QLabel(oyna)
+matn2.setText("0")
+matn2.setStyleSheet("font-size: 40px; color:blue; font-weight:bold;")
+matn2.setFixedWidth(200)
+matn2.move(175, 100)
+
 def func_btn():
-    print("Tugmacha bosildi")
+    n = int(matn2.text()) + 1
+    matn2.setText(f"{n}")
 
 tugma1 = QPushButton(oyna)
-tugma1.setText("Press Me")
+tugma1.setText("Count")
 tugma1.setGeometry(100, 200, 200, 50)
 tugma1.setStyleSheet("font-size:24px; background-color: #ed8032; border: 2px solid black; border-radius:20px;")
 tugma1.clicked.connect(func_btn)
+
+def reset():
+    matn2.setText("0")
+
+tugma2 = QPushButton(oyna)
+tugma2.setText("Reset")
+tugma2.setGeometry(100, 260, 200, 50)
+tugma2.setStyleSheet("font-size:24px; background-color: red; border: 2px solid black; border-radius:20px;")
+tugma2.clicked.connect(reset)
+
 
 oyna.show()
 app.exec_()
