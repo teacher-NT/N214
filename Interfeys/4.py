@@ -3,13 +3,18 @@ os.system("cls")
 
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton,
-    QVBoxLayout, QHBoxLayout, QComboBox
+    QVBoxLayout, QHBoxLayout, QComboBox, QCheckBox  
 )
 
 style_combo = """
     font-size: 22px;
     background-color: #3a7ae8;
     padding: 10px;
+"""
+
+style_check = """
+    font-size: 18px;
+
 """
 
 class Window(QWidget):
@@ -27,7 +32,15 @@ class Window(QWidget):
         """)
         self.vbox.addWidget(self.matn1)
 
+        self.matn2 = QLabel("Tanlangan ichimliklar: ?")
+        self.matn2.setStyleSheet("""
+                    font-size: 28px;
+                    color: blue;
+                    font-weight: bold;
+                """)
+        self.vbox.addWidget(self.matn2)
         self.add_combo()
+        self.add_checkbox()
 
         self.btn1 = QPushButton()
         self.btn1.setText("Change Text 1")
@@ -59,6 +72,45 @@ class Window(QWidget):
         name = self.menu.currentText()
         self.matn1.setText(f"Tanlangan taom: {name}")
 
+    def add_checkbox(self):
+        self.ch1 = QCheckBox("Choy")
+        self.ch1.setStyleSheet(style_check)
+        self.ch1.stateChanged.connect(self.choose_drink)
+        self.vbox.addWidget(self.ch1)
+
+        self.ch2 = QCheckBox("Coffee")
+        self.ch2.setStyleSheet(style_check)
+        self.ch2.stateChanged.connect(self.choose_drink)
+        self.vbox.addWidget(self.ch2)
+
+        self.ch3 = QCheckBox("Cola")
+        self.ch3.setStyleSheet(style_check)
+        self.ch3.stateChanged.connect(self.choose_drink)
+        self.vbox.addWidget(self.ch3)
+
+        self.ch4 = QCheckBox("Pepsi")
+        self.ch4.setStyleSheet(style_check)
+        self.ch4.stateChanged.connect(self.choose_drink)
+        self.vbox.addWidget(self.ch4)  
+
+        self.ch5 = QCheckBox("Moxito")
+        self.ch5.setStyleSheet(style_check)
+        self.ch5.stateChanged.connect(self.choose_drink)
+        self.vbox.addWidget(self.ch5)      
+
+    def choose_drink(self):
+        drinks = ""
+        if self.ch1.isChecked():
+            drinks += f"{self.ch1.text()}, "
+        if self.ch2.isChecked():
+            drinks += f"{self.ch2.text()}, "
+        if self.ch3.isChecked():
+            drinks += f"{self.ch3.text()}, "
+        if self.ch4.isChecked():
+            drinks += f"{self.ch4.text()}, "
+        if self.ch5.isChecked():
+            drinks += f"{self.ch5.text()}, "
+        self.matn2.setText(f"Tanlangan ichimliklar:\n{drinks}")
 
 app = QApplication([])
 win = Window()
