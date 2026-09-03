@@ -3,7 +3,8 @@ os.system("cls")
 
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton,
-    QVBoxLayout, QHBoxLayout, QComboBox, QCheckBox  
+    QVBoxLayout, QHBoxLayout, QComboBox, QCheckBox, QRadioButton,
+    QMessageBox
 )
 
 style_combo = """
@@ -15,6 +16,11 @@ style_combo = """
 style_check = """
     font-size: 18px;
 
+"""
+
+style_radio = """
+    font-size: 18px;
+    color: mageta;
 """
 
 class Window(QWidget):
@@ -41,9 +47,10 @@ class Window(QWidget):
         self.vbox.addWidget(self.matn2)
         self.add_combo()
         self.add_checkbox()
+        self.add_radio()
 
         self.btn1 = QPushButton()
-        self.btn1.setText("Change Text 1")
+        self.btn1.setText("Buyurtma berish")
         # self.btn1.setFixedSize(200, 50)
         self.btn1.setStyleSheet("""
             font-size: 18px;
@@ -59,7 +66,17 @@ class Window(QWidget):
 
       
     def btn1_func(self):
-        self.matn1.setText("Hello World")
+        pay = None
+        if self.r1.isChecked():
+            pay = self.r1.text()
+        elif self.r2.isChecked():
+            pay = self.r2.text()
+        elif self.r3.isChecked():
+            pay = self.r3.text()
+        food = self.change_food()
+        drinks = self.choose_drink()
+
+        QMessageBox.information(self, "Buyurtma", f"Buyurtma malumotlari\n{food}\nIchimliklar: {drinks}\nTo'lov: {pay}")
 
     def add_combo(self):
         self.menu = QComboBox()
@@ -71,6 +88,7 @@ class Window(QWidget):
     def change_food(self):
         name = self.menu.currentText()
         self.matn1.setText(f"Tanlangan taom: {name}")
+        return f"Tanlangan taom: {name}"
 
     def add_checkbox(self):
         self.ch1 = QCheckBox("Choy")
@@ -111,6 +129,23 @@ class Window(QWidget):
         if self.ch5.isChecked():
             drinks += f"{self.ch5.text()}, "
         self.matn2.setText(f"Tanlangan ichimliklar:\n{drinks}")
+        return drinks
+
+    def add_radio(self):
+
+        self.vbox.addWidget(QLabel("To'lov usuli:"))
+
+        self.r1 = QRadioButton("Naqd")
+        self.r1.setStyleSheet(style_radio)
+        self.vbox.addWidget(self.r1)
+
+        self.r2 = QRadioButton("Karta")
+        self.r2.setStyleSheet(style_radio)
+        self.vbox.addWidget(self.r2)
+
+        self.r3 = QRadioButton("Onlayn")
+        self.r3.setStyleSheet(style_radio)
+        self.vbox.addWidget(self.r3)
 
 app = QApplication([])
 win = Window()
